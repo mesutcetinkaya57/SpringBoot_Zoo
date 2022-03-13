@@ -1,0 +1,44 @@
+spring:
+  mail:
+    host: localhost
+  data:
+    rest:
+      base-path: /hal
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+  thymeleaf:
+    enabled: false
+  datasource:
+    generate-unique-name: false
+    name: zoo
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.show_sql: true
+      hibernate.format_sql: true
+  security:
+    user:
+      password: secret    
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org.springframework.web: debug
+    org.springframework.jdbc.datasource: debug
+    org.springframework.security: debug 
+  file:
+    name: C:/Users/commo/OneDrive/Desktop/GITHUB/STS_WorkSpace/StsAppslogs/ZooApplication.log
+zoo:
+  display-zookeepers-with-pets: true
